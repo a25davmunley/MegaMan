@@ -1,0 +1,1090 @@
+fileFormatVersion: 2
+guid: 3ab82bae521079745a82e2f49a56e261
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 402
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f3e3adb573a474a9987e669d04438f
+      internalID: -1947748712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 400
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b0437a7b7ff674384a1444e5d9fd83
+      internalID: 1497529606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 401
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388bbe5432eeacb47997c5f53978345c
+      internalID: 257826132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 401
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b295a68e7ec6c4f41a7ceaf56b3bbaa4
+      internalID: 1435640131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 400
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454ecaf0ebaa7964a95947d7d485eae1
+      internalID: 598427717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 399
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e85ff94e33fc7e408c4e280b3f39e42
+      internalID: -160306559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 335
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c16eecbb19dbbb4bb86645b794438e6
+      internalID: -486195025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 335
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd861f48b688f94e9a87727403f1b8b
+      internalID: 799427020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_8
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 335
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338839192eca95949848b79f959144fe
+      internalID: -87189183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_9
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 336
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45d8939a1a46eb43aabb8f4d32aa50c
+      internalID: -1919591847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_10
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 335
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e9454abbcf9f64cac0b26b9ec224fb
+      internalID: -794430126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_11
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 334
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bb3ace9acdb1e49952d08202824043
+      internalID: -1528562307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 270
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc439aed110a754a9e9f00d12db520c
+      internalID: -962143836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_13
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 270
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac669b2cbd619be44aa580a3185b3a5f
+      internalID: -1059079828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_14
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 270
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1a6f71814e8474ab2b0288f6c55421
+      internalID: 1183855532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_15
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 270
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a78e4ab536c37645a7d78d4724f6451
+      internalID: -1869149565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_16
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 270
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e51218b07bea9f47b4de410be66e174
+      internalID: -1957921712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_17
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 270
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db23b50db6192774784abcb4c8463062
+      internalID: -1257626139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 205
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a06e6d27cf567f4e8873a59c2228e0e
+      internalID: -547953849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_19
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 204
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46390e43c9419741a068978fbeef078
+      internalID: 1490154066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_20
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 204
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6b88ed13aeb244297431cdeb1bd845
+      internalID: 1553810818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 204
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eac278cf315da44d8b9d068a8824422
+      internalID: 1468494633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_22
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 204
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a5ce483b541244e84efa60f71f1c43
+      internalID: -798100913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_23
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 205
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f24778433837a47910f1db1d8822cb
+      internalID: 576813784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 141
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3753b1c3776c14ca8ab8b89afdb17b
+      internalID: 1040671951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_25
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 141
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa23db3b37b836441ae0cf28ad040702
+      internalID: 1189714774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 141
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f23bc17971efb4f8f02219c17598e3
+      internalID: 418985473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_27
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 140
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35cde9d4a4737a4790fe355c4f1594e
+      internalID: 375628836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_28
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 141
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebee97a533637c244ba532c011e04670
+      internalID: -2129454864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_29
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 141
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4570cc0578374ad4786c483f3782a300
+      internalID: -349397741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_30
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 75
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040204ffa771fdd4eb708b1f17a1ce8e
+      internalID: -34595411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_31
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 75
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521c00db9997af946ab0bffd96dd3ec1
+      internalID: -615963313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_32
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 75
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c5e5bbf2d4c0b4c94170f68b028e62
+      internalID: -967293348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_33
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 75
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35debe97aad2b1e48a74787a60e238e3
+      internalID: -165759333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_34
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 75
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8221460111ab73f4baa189c920720c34
+      internalID: 1660390292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_35
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 75
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845353933a52e53469eeb8efc3186445
+      internalID: 1082587257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_36
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 11
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c2ff0931b6fd24f914883e2218a719
+      internalID: 340847681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_37
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 11
+        width: 61
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527206f9cb351ea4fb30fe352f876fc1
+      internalID: -986510404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_38
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 13
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b104310b4b10cf4ba2c455bbf5e8016
+      internalID: -242323394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_39
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0.8571396
+        width: 66
+        height: 67.14286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0c599ce77a1604394368f440e6070f
+      internalID: -1926312041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_40
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0.8571396
+        width: 66
+        height: 67.14286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: addcf9e736afb5049bae08055d19f552
+      internalID: 312310625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Captura de pantalla 2026-04-15 194756_41
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0.8571396
+        width: 66
+        height: 67.14286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d53700c60986e846bc49df5e1adf594
+      internalID: 182634006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Captura de pantalla 2026-04-15 194756_0: -1947748712
+      Captura de pantalla 2026-04-15 194756_1: 1497529606
+      Captura de pantalla 2026-04-15 194756_10: -794430126
+      Captura de pantalla 2026-04-15 194756_11: -1528562307
+      Captura de pantalla 2026-04-15 194756_12: -962143836
+      Captura de pantalla 2026-04-15 194756_13: -1059079828
+      Captura de pantalla 2026-04-15 194756_14: 1183855532
+      Captura de pantalla 2026-04-15 194756_15: -1869149565
+      Captura de pantalla 2026-04-15 194756_16: -1957921712
+      Captura de pantalla 2026-04-15 194756_17: -1257626139
+      Captura de pantalla 2026-04-15 194756_18: -547953849
+      Captura de pantalla 2026-04-15 194756_19: 1490154066
+      Captura de pantalla 2026-04-15 194756_2: 257826132
+      Captura de pantalla 2026-04-15 194756_20: 1553810818
+      Captura de pantalla 2026-04-15 194756_21: 1468494633
+      Captura de pantalla 2026-04-15 194756_22: -798100913
+      Captura de pantalla 2026-04-15 194756_23: 576813784
+      Captura de pantalla 2026-04-15 194756_24: 1040671951
+      Captura de pantalla 2026-04-15 194756_25: 1189714774
+      Captura de pantalla 2026-04-15 194756_26: 418985473
+      Captura de pantalla 2026-04-15 194756_27: 375628836
+      Captura de pantalla 2026-04-15 194756_28: -2129454864
+      Captura de pantalla 2026-04-15 194756_29: -349397741
+      Captura de pantalla 2026-04-15 194756_3: 1435640131
+      Captura de pantalla 2026-04-15 194756_30: -34595411
+      Captura de pantalla 2026-04-15 194756_31: -615963313
+      Captura de pantalla 2026-04-15 194756_32: -967293348
+      Captura de pantalla 2026-04-15 194756_33: -165759333
+      Captura de pantalla 2026-04-15 194756_34: 1660390292
+      Captura de pantalla 2026-04-15 194756_35: 1082587257
+      Captura de pantalla 2026-04-15 194756_36: 340847681
+      Captura de pantalla 2026-04-15 194756_37: -986510404
+      Captura de pantalla 2026-04-15 194756_38: -242323394
+      Captura de pantalla 2026-04-15 194756_39: -1926312041
+      Captura de pantalla 2026-04-15 194756_4: 598427717
+      Captura de pantalla 2026-04-15 194756_40: 312310625
+      Captura de pantalla 2026-04-15 194756_41: 182634006
+      Captura de pantalla 2026-04-15 194756_5: -160306559
+      Captura de pantalla 2026-04-15 194756_6: -486195025
+      Captura de pantalla 2026-04-15 194756_7: 799427020
+      Captura de pantalla 2026-04-15 194756_8: -87189183
+      Captura de pantalla 2026-04-15 194756_9: -1919591847
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
