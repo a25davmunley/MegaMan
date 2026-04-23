@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
     public float speed = 5f;
     public float jumpForce = 7f;
 
-    public Transform startSpawn; // ✔ spawn correcto
+    public Transform startSpawn; 
 
     private float moveX;
 
