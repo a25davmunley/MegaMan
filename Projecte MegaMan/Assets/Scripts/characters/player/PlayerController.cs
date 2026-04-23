@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void Start()
+    {
+        Transform spawn = GameObject.Find("StartPoint").transform;
+        transform.position = spawn.position;
+    }
+
     private void OnEnable()
     {
         inputActions.Enable();
