@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     public float speed = 5f;
     public float jumpForce = 7f;
-
+    public Transform startSpawn;
     private float moveX;
 
     [Header("Ground Check")]
@@ -26,10 +26,16 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         rb = GetComponent<Rigidbody2D>();
     }
 
+<<<<<<< Updated upstream
     void Start()
     {
         Transform spawn = GameObject.Find("StartPoint").transform;
         transform.position = spawn.position;
+=======
+    private void Start()
+    {
+        transform.position = startSpawn.position;
+>>>>>>> Stashed changes
     }
 
     private void OnEnable()

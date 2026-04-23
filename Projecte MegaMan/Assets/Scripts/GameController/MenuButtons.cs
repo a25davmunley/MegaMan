@@ -5,12 +5,17 @@ public class MenuButtons : MonoBehaviour
 {
     public void StartGame()
     {
+        Debug.Log("Cargando nivel...");
         SceneManager.LoadScene("MundoDeHielo");
     }
 
     public void Options()
     {
+<<<<<<< Updated upstream
         Debug.Log("Options");
+=======
+        Debug.Log("Click detectado");
+>>>>>>> Stashed changes
         SceneManager.LoadScene("Option");
     }
 
@@ -22,4 +27,5 @@ public class MenuButtons : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+
 }
