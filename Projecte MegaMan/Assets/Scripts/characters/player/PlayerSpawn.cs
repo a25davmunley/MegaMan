@@ -6,11 +6,6 @@ public class PlayerSpawn : MonoBehaviour
 
     void Start()
     {
-<<<<<<< Updated upstream
-        transform.position = startSpawn.position;
-    }
-}
-=======
         if (PlayerPrefs.HasKey("CheckpointX"))
         {
             float x = PlayerPrefs.GetFloat("CheckpointX");
@@ -25,4 +20,3 @@ public class PlayerSpawn : MonoBehaviour
         }
     }
 }
->>>>>>> Stashed changes

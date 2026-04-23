@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     public float speed = 5f;
     public float jumpForce = 7f;
-    public Transform startSpawn;
+
+    public Transform startSpawn; // ✔ spawn correcto
+
     private float moveX;
 
     [Header("Ground Check")]
@@ -26,16 +28,16 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         rb = GetComponent<Rigidbody2D>();
     }
 
-<<<<<<< Updated upstream
-    void Start()
-    {
-        Transform spawn = GameObject.Find("StartPoint").transform;
-        transform.position = spawn.position;
-=======
     private void Start()
     {
-        transform.position = startSpawn.position;
->>>>>>> Stashed changes
+        if (startSpawn != null)
+        {
+            transform.position = startSpawn.position;
+        }
+        else
+        {
+            Debug.LogError("StartSpawn no asignado en el Inspector");
+        }
     }
 
     private void OnEnable()
@@ -52,7 +54,6 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
     {
         CheckGround();
         Move();
-        
     }
 
     private void Move()

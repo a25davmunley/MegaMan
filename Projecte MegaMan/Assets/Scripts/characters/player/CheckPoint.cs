@@ -12,8 +12,8 @@ public class Checkpoint : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
-<<<<<<< Updated upstream
+
 }
-=======
-}
->>>>>>> Stashed changes
+
+
+
