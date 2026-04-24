@@ -399,7 +399,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
+<<<<<<< Updated upstream
     m_AddedComponents: []
+=======
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2004150886203708969, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2090802515}
+    - targetCorrespondingSourceObject: {fileID: 2004150886203708969, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2090802516}
+>>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
 --- !u!1 &493959193
 GameObject:
@@ -68157,6 +68167,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5634689703185229193, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
   m_PrefabInstance: {fileID: 83354502}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &2090802515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83354503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6894081a4b186b649b2484ada74ca6fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 11400000, guid: ce7b46b35c0f8b942b5018d2ecf2750a, type: 2}
+  - {fileID: 11400000, guid: 2ebf9fdcf9419954bb28259856f013e3, type: 2}
+  - {fileID: 11400000, guid: f95c4f39ed37ac649bca2f8234137cd2, type: 2}
+  - {fileID: 11400000, guid: 2d85f8643166e4b40b2ff46ec9c3d060, type: 2}
+  - {fileID: 11400000, guid: d7a118431fdd1094e819cd6f0a9dc565, type: 2}
+  - {fileID: 11400000, guid: 2612fa6d35e76b0488b641faf055189c, type: 2}
+  currentWeaponIndex: 0
+  currentEnergy: 100
+--- !u!95 &2090802516
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83354503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8375d2d698c8eb841b8323dffa4740a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
