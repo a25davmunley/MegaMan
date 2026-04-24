@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     private bool isGrounded;
 
+    [Header("Animacion")]
+
+    private Animator animator;
+
+
     private void Awake()
     {
         inputActions = new PlayerInputAction();
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         {
             Debug.LogError("StartSpawn no asignado en el Inspector");
         }
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -61,6 +67,8 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
         CheckGround();
         Move();
+        animator.SetFloat("Horizontal", Mathf.Abs(moveX));
+
     }
 
     private void Move()
