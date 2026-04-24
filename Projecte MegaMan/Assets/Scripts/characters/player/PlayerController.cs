@@ -42,6 +42,12 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     private void OnEnable()
     {
+        if (inputActions == null)
+        {
+            inputActions = new PlayerInputAction();
+            inputActions.Player.SetCallbacks(this);
+        }
+
         inputActions.Enable();
     }
 
@@ -52,6 +58,7 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     private void Update()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
         CheckGround();
         Move();
     }
@@ -77,7 +84,8 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded)
+        
+        if (context.started && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
@@ -94,4 +102,5 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
+    
 }
