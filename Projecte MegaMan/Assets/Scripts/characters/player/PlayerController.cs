@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     [Header("Ground Check")]
     public Transform groundCheck;
-    public float groundRadius = 0.2f;
+    public float groundRadius = 0.4f;
     public LayerMask groundLayer;
 
     private bool isGrounded;
@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     private void Update()
     {
+        //Debug.Log(isGrounded);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
         CheckGround();
         Move();
@@ -92,7 +93,10 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        
+       // if (context.started)
+        //{
+        //    Debug.Log("Jump pressed");
+       // }
         if (context.started && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
