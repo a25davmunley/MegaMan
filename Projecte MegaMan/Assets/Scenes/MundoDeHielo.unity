@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5634689703185229193, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 4.999999
       objectReference: {fileID: 0}
     - target: {fileID: 5634689703185229193, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
       propertyPath: m_LocalScale.z
@@ -354,6 +354,22 @@ PrefabInstance:
     - target: {fileID: 5807873219427632668, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
       propertyPath: m_Offset.y
       value: -0.00010344386
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918906154121499947, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918906154121499947, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918906154121499947, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918906154121499947, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
