@@ -114,5 +114,12 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
-    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            // hacer daño
+            Debug.Log("Daño recibido");
+        }
+    }
 }

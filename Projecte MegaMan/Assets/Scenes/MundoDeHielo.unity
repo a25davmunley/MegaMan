@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10.156142
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -297,11 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5634689703185229193, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.56
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 5634689703185229193, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.38
+      value: -1.36
       objectReference: {fileID: 0}
     - target: {fileID: 5634689703185229193, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -68853,13 +68853,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crazy Razy
       objectReference: {fileID: 0}
+    - target: {fileID: 4198920273210114647, guid: a0af511c9e839fd458d98163c64aca50, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4561575072918616654, guid: a0af511c9e839fd458d98163c64aca50, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.25
+      value: 20.85
       objectReference: {fileID: 0}
     - target: {fileID: 4561575072918616654, guid: a0af511c9e839fd458d98163c64aca50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 4561575072918616654, guid: a0af511c9e839fd458d98163c64aca50, type: 3}
       propertyPath: m_LocalPosition.z
