@@ -4,12 +4,15 @@ public class CrazyRazy : MonoBehaviour
 {
     public Transform player;
     public float triggerDistance = 3f;
+    public float timeToSplit = 2f;
     public float speed = 2f;
 
     public GameObject headPrefab;
     public GameObject bodyPrefab;
 
     private bool activated = false;
+    private bool counting = false;
+    private float timer = 0f;
 
     void Update()
     {
@@ -17,10 +20,26 @@ public class CrazyRazy : MonoBehaviour
 
         Move();
 
-        float dist = Vector2.Distance(transform.position, player.position);
-        if (dist < triggerDistance)
+        // SOLO detecta una vez cuando entra en rango
+        if (!counting)
         {
-            Split();
+            float dist = Vector2.Distance(transform.position, player.position);
+
+            if (dist < triggerDistance)
+            {
+                counting = true; // empieza el contador
+            }
+        }
+
+        // una vez empieza, NO depende de distancia
+        if (counting)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= timeToSplit)
+            {
+                Split();
+            }
         }
     }
 
@@ -41,5 +60,12 @@ public class CrazyRazy : MonoBehaviour
         Instantiate(bodyPrefab, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && !counting)
+        {
+            counting = true;
+        }
     }
 }

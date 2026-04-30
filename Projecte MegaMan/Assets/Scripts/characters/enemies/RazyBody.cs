@@ -2,16 +2,24 @@ using UnityEngine;
 
 public class RazyBody : MonoBehaviour
 {
-    public float lifeTime = 1.5f;
+    public float speed = 2f;
+    public float lifeTime = 3f;
+
     private Rigidbody2D rb;
+    private int direction = 1;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        Vector2 dir = new Vector2(Random.Range(-1f, 1f), 1f).normalized;
-        rb.velocity = dir * 2f;
+        // puede ser derecha o izquierda según diseño
+        direction = Random.value > 0.5f ? 1 : -1;
 
         Destroy(gameObject, lifeTime);
+    }
+
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(direction * speed, rb.velocity.y);
     }
 }

@@ -4,30 +4,38 @@ public class RazyHead : MonoBehaviour
 {
     public Transform player;
     public float speed = 5f;
-    public float arcHeight = 3f;
+    public float arcHeight = 2f;
 
-    private Rigidbody2D rb;
-    private Vector2 direction;
+    private Vector2 startPos;
+    private Vector2 targetPos;
+    private float t;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        startPos = transform.position;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (player == null) return;
 
-        Vector2 toPlayer = (Vector2)player.position - rb.position;
+        t += Time.deltaTime * speed;
 
-        //  persecución real
-        direction = toPlayer.normalized;
+        targetPos = player.position;
 
-        //  efecto U (arco vertical tipo ataque)
-        Vector2 arc = new Vector2(0, Mathf.Sin(Time.time * 5f) * arcHeight);
+        // movimiento base hacia el jugador
+        Vector2 linear = Vector2.Lerp(startPos, targetPos, t);
 
-        Vector2 move = (direction * speed + arc);
+        // arco en U
+        float arc = Mathf.Sin(t * Mathf.PI) * arcHeight;
 
-        rb.velocity = move;
+        transform.position = new Vector2(linear.x, linear.y + arc);
+
+        // reset cuando llega
+        if (t >= 1f)
+        {
+            startPos = transform.position;
+            t = 0f;
+        }
     }
 }
