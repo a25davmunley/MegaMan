@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
     [Header("Animacion")]
 
     private Animator animator;
+    private SpriteRenderer sprite;
 
 
     private void Awake()
@@ -35,6 +36,8 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
 
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
+
         if (startSpawn != null)
         {
             transform.position = startSpawn.position;
@@ -69,7 +72,17 @@ public class PlayerController : MonoBehaviour, PlayerInputAction.IPlayerActions
         CheckGround();
         Move();
         animator.SetFloat("Horizontal", Mathf.Abs(moveX));
+        animator.SetBool("EnSuelo", isGrounded);
 
+        if (moveX > 0)
+        {
+            sprite.flipX = false; // mira derecha
+        }
+        else if (moveX < 0)
+        {
+            sprite.flipX = true; // mira izquierda
+        }
+      
     }
 
     private void Move()
