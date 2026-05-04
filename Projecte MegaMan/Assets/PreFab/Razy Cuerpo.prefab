@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2a40e9a5712fa4f9503a93fdcbe4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   lifeTime: 1.5
 --- !u!50 &5412551404870656501
 Rigidbody2D:
@@ -161,7 +162,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 56b1503a7f9ea7b4e99e9f15fa6686c8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
