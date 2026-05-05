@@ -4,8 +4,7 @@ public class CrazyRazy : MonoBehaviour
 {
     public Transform player;
 
-    public float detectRange = 6f;   // empieza a perseguir
-    public float splitRange = 1.5f;  // explota si está cerca
+    public float detectRange = 6f;
     public float speed = 3f;
 
     public GameObject headPrefab;
@@ -20,11 +19,6 @@ public class CrazyRazy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-
-        if (player == null)
-        {
-            Debug.LogError("❌ NO HAY PLAYER CON TAG 'Player'");
-        }
 
         // 🔥 evita que el jugador se suba encima fácilmente
         rb.sharedMaterial = new PhysicsMaterial2D()
@@ -45,12 +39,6 @@ public class CrazyRazy : MonoBehaviour
         {
             chasing = true;
         }
-
-        // 💥 split si está muy cerca
-        if (dist <= splitRange)
-        {
-            Split();
-        }
     }
 
     void FixedUpdate()
@@ -64,7 +52,6 @@ public class CrazyRazy : MonoBehaviour
     {
         Vector2 dir = (player.position - transform.position).normalized;
 
-        // 🚀 movimiento horizontal estable
         rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
     }
 
@@ -80,9 +67,13 @@ public class CrazyRazy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        // 🔥 evita que el jugador se quede encima
+        if (activated) return;
+
         if (col.gameObject.CompareTag("Player"))
         {
+            Split(); // 💥 ahora solo se activa al chocar
+
+            // 🔥 empuje opcional al jugador
             Rigidbody2D prb = col.rigidbody;
 
             if (prb != null)
@@ -95,12 +86,7 @@ public class CrazyRazy : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (player == null) return;
-
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectRange);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, splitRange);
     }
 }

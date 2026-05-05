@@ -5,11 +5,12 @@ public class RazyHead : MonoBehaviour
     public Transform player;
 
     public float moveSpeed = 6f;
-    public float attackSpeed = 8f;
+    public float attackDuration = 0.35f;
 
-    public float minStepTime = 0.25f;   // ⏱️ mínimo tiempo antes de cambiar punto
-    public float pauseTime = 0.15f;     // ⏸️ pausa en A / B / C (CLAVE)
+    public float arcHeight = 2f;
+    public float vWidth = 3f;
 
+    public float attackCooldown = 0.5f; // ⏱️ cooldown entre ataques
     public int maxCycles = 2;
 
     private Rigidbody2D rb;
@@ -17,21 +18,20 @@ public class RazyHead : MonoBehaviour
     private enum State { Position, Attack }
     private State state;
 
-    private Vector2 A, B, C;
-    private Vector2 currentTarget;
+    private Vector2 startPos;
+    private Vector2 endPos;
 
-    private float stepTimer;
-    private float pauseTimer;
-
-    private bool isPaused;
-
-    private int step;
+    private float t;
     private int cycleCount;
+
+    private bool inCooldown;
+    private float cooldownTimer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+        rb.gravityScale = 0f;
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
@@ -40,9 +40,24 @@ public class RazyHead : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player == null) return;
+        if (!player) return;
 
-        stepTimer += Time.fixedDeltaTime;
+        // ⏱️ cooldown bloquea todo
+        if (inCooldown)
+        {
+            rb.velocity = Vector2.zero;
+
+            cooldownTimer += Time.fixedDeltaTime;
+
+            if (cooldownTimer >= attackCooldown)
+            {
+                cooldownTimer = 0f;
+                inCooldown = false;
+                state = State.Position; // vuelve a posicionarse
+            }
+
+            return;
+        }
 
         if (state == State.Position)
             Position();
@@ -50,99 +65,60 @@ public class RazyHead : MonoBehaviour
             Attack();
     }
 
-    // 🟢 posicionamiento lateral
+    // 🟢 colocación
     void Position()
     {
-        Vector2 dir = (player.position - transform.position).normalized;
+        Vector2 offset = new Vector2(
+            -Mathf.Sign(player.position.x - transform.position.x) * 2f,
+            2f
+        );
 
-        Vector2 offset = new Vector2(-Mathf.Sign(dir.x) * 2f, 2f);
         Vector2 target = (Vector2)player.position + offset;
 
-        rb.velocity = (target - (Vector2)transform.position).normalized * moveSpeed;
+        rb.velocity = (target - (Vector2)transform.position) * moveSpeed;
 
-        if (Vector2.Distance(transform.position, target) < 0.2f)
-        {
+        if (Vector2.Distance(transform.position, target) < 0.3f)
             StartAttack();
-        }
     }
 
-    // 🔥 iniciar patrón A B C B A
+    // 🔥 inicio V
     void StartAttack()
     {
         state = State.Attack;
 
-        step = 0;
-        cycleCount = 0;
+        startPos = transform.position;
 
-        stepTimer = 0;
-        pauseTimer = 0;
-        isPaused = false;
+        float dir = Mathf.Sign(player.position.x - transform.position.x);
 
-        Vector2 p = player.position;
+        endPos = startPos + new Vector2(dir * vWidth, 0f);
 
-        A = p + Vector2.left * 2f;
-        B = p;
-        C = p + Vector2.right * 2f;
-
-        currentTarget = B;
+        t = 0f;
     }
 
-    // 🔴 movimiento con pausa en cada punto
+    // 🔴 V limpia
     void Attack()
     {
-        // ⏸️ PAUSA EN EL PUNTO
-        if (isPaused)
+        t += Time.fixedDeltaTime / attackDuration;
+
+        Vector2 pos = Vector2.Lerp(startPos, endPos, t);
+
+        float height = -Mathf.Sin(t * Mathf.PI) * arcHeight;
+        pos.y += height;
+
+        rb.MovePosition(pos);
+
+        if (t >= 1f)
         {
-            pauseTimer += Time.fixedDeltaTime;
+            cycleCount++;
 
-            rb.velocity = Vector2.zero;
-
-            if (pauseTimer >= pauseTime)
+            if (cycleCount >= maxCycles)
             {
-                isPaused = false;
-                pauseTimer = 0;
-                stepTimer = 0;
-                NextStep();
+                cycleCount = 0;
+                inCooldown = true; // ⏱️ entra en cooldown
+                return;
             }
 
-            return;
-        }
-
-        // 🚶 movimiento hacia el punto actual
-        Vector2 dir = currentTarget - (Vector2)transform.position;
-        rb.velocity = dir.normalized * attackSpeed;
-
-        // ✔ llega al punto
-        if (Vector2.Distance(transform.position, currentTarget) < 0.2f
-            && stepTimer >= minStepTime)
-        {
-            rb.velocity = Vector2.zero;
-
-            isPaused = true; // 🔥 activa pausa
-        }
-    }
-
-    void NextStep()
-    {
-        step++;
-
-        switch (step)
-        {
-            case 1: currentTarget = C; break;
-            case 2: currentTarget = B; break;
-            case 3: currentTarget = A; break;
-            default:
-                cycleCount++;
-
-                if (cycleCount >= maxCycles)
-                {
-                    state = State.Position;
-                    return;
-                }
-
-                step = 0;
-                currentTarget = B;
-                break;
+            StartAttack();
         }
     }
 }
