@@ -38,7 +38,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""jump"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""8bf85cbb-086e-4435-80ac-7feeed8da6c4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

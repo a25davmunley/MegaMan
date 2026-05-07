@@ -1,25 +1,76 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CameraFollowBounds : MonoBehaviour
+public class MegaManScreenCamera : MonoBehaviour
 {
     public Transform player;
-    public Transform boundsMin;
-    public Transform boundsMax;
 
-    public Vector3 offset = new Vector3(0, 0, -10);
-    public float smoothSpeed = 5f;
+    [Header("Follow")]
+    public float followSpeed = 5f;
+
+    [Header("Screen Transition")]
+    public float screenWidth = 16f;
+    public float screenHeight = 9f;
+    public float transitionSpeed = 3f;
+
+    [Header("Offsets")]
+    public float horizontalOffset = 2f;
+    public float verticalOffset = 2f;
+    public float zOffset = -10f;
+
+    private bool inTransition = false;
+    private Vector3 targetPosition;
 
     void LateUpdate()
     {
-        if (player == null || boundsMin == null || boundsMax == null) return;
+        if (player == null) return;
 
-        Vector3 targetPosition = player.position + offset;
+        if (inTransition)
+        {
+            // 🔥 Transición Mega Man
+            transform.position = Vector3.Lerp(
+                transform.position,
+                targetPosition,
+                transitionSpeed * Time.deltaTime
+            );
 
-        float clampedX = Mathf.Clamp(targetPosition.x, boundsMin.position.x, boundsMax.position.x);
-        float clampedY = Mathf.Clamp(targetPosition.y, boundsMin.position.y, boundsMax.position.y);
+            // Finalizar transición
+            if (Vector3.Distance(transform.position, targetPosition) < 0.05f)
+            {
+                transform.position = targetPosition;
+                inTransition = false;
+            }
+        }
+        else
+        {
+            // 🔥 Cámara libre siguiendo jugador
+            Vector3 followPosition = new Vector3(
+                player.position.x + horizontalOffset,
+                player.position.y + verticalOffset,
+                zOffset
+            );
 
-        Vector3 finalPosition = new Vector3(clampedX, clampedY, offset.z);
+            transform.position = Vector3.Lerp(
+                transform.position,
+                followPosition,
+                followSpeed * Time.deltaTime
+            );
+        }
+    }
 
-        transform.position = Vector3.Lerp(transform.position, finalPosition, smoothSpeed * Time.deltaTime);
+    // 🔥 LLAMAR ESTO DESDE UN TRIGGER
+    public void SnapToScreen()
+    {
+        Vector2 screen = new Vector2(
+            Mathf.Floor(player.position.x / screenWidth),
+            Mathf.Floor(player.position.y / screenHeight)
+        );
+
+        targetPosition = new Vector3(
+            screen.x * screenWidth + screenWidth / 2f + horizontalOffset,
+            screen.y * screenHeight + screenHeight / 2f + verticalOffset,
+            zOffset
+        );
+
+        inTransition = true;
     }
 }

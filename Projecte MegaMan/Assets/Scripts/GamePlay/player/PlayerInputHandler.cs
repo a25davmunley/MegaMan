@@ -42,10 +42,10 @@ public class PlayerInputHandler : MonoBehaviour, PlayerInputAction.IPlayerAction
     }
 
     public void OnMove(InputAction.CallbackContext context)
-    // Se ejecuta cuando hay input de movimiento.
     {
         MoveInput = context.ReadValue<Vector2>();
-        // Lee el valor del joystick o teclado.
+
+        
     }
 
     public void OnJump(InputAction.CallbackContext context)
