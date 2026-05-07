@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
 
 public class RazyHead : MonoBehaviour
-// Enemigo tipo boss con posicionamiento + ataque en V.
 {
     public Transform player;
 
-    [Header("Movement")]
     public float moveSpeed = 6f;
-
-    [Header("Attack")]
     public float attackDuration = 0.35f;
+
     public float arcHeight = 2f;
     public float vWidth = 3f;
 
-    [Header("Cooldown")]
     public float attackCooldown = 0.5f;
     public int maxCycles = 2;
+
+    public float hitSize = 1.2f;
 
     private Rigidbody2D rb;
 
@@ -26,6 +24,7 @@ public class RazyHead : MonoBehaviour
     private Vector2 endPos;
 
     private float t;
+
     private int cycleCount;
 
     private bool inCooldown;
@@ -35,29 +34,18 @@ public class RazyHead : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        if (rb == null)
-        {
-            Debug.LogError("❌ RazyHead necesita Rigidbody2D");
-            return;
-        }
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         rb.freezeRotation = true;
         rb.gravityScale = 0f;
-
-        // fallback seguro (por si no lo asignas en Inspector)
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         state = State.Position;
     }
 
     void FixedUpdate()
     {
-        if (!player || rb == null) return;
+        if (!player) return;
 
-        // ======================
-        // COOLDOWN
-        // ======================
         if (inCooldown)
         {
             rb.velocity = Vector2.zero;
@@ -67,16 +55,15 @@ public class RazyHead : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0f;
+
                 inCooldown = false;
+
                 state = State.Position;
             }
 
             return;
         }
 
-        // ======================
-        // STATES
-        // ======================
         if (state == State.Position)
             Position();
         else
@@ -117,10 +104,11 @@ public class RazyHead : MonoBehaviour
 
         Vector2 pos = Vector2.Lerp(startPos, endPos, t);
 
-        float height = -Mathf.Sin(t * Mathf.PI) * arcHeight;
-        pos.y += height;
+        pos.y += -Mathf.Sin(t * Mathf.PI) * arcHeight;
 
         rb.MovePosition(pos);
+
+        CheckHit();
 
         if (t >= 1f)
         {
@@ -129,11 +117,23 @@ public class RazyHead : MonoBehaviour
             if (cycleCount >= maxCycles)
             {
                 cycleCount = 0;
+
                 inCooldown = true;
+
                 return;
             }
 
             StartAttack();
+        }
+    }
+
+    void CheckHit()
+    {
+        float dist = Vector2.Distance(transform.position, player.position);
+
+        if (dist <= hitSize)
+        {
+            Debug.Log("se toca");
         }
     }
 }

@@ -1,41 +1,34 @@
-using UnityEngine;
-// Librería base de Unity.
+ï»¿using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
-// Controla la lógica del salto.
 {
     public float jumpForce = 7f;
-    // Fuerza del salto.
 
     private Rigidbody2D rb;
-    // Física del jugador.
-
     private PlayerInputHandler input;
-    // Input del jugador.
-
     private PlayerGroundCheck ground;
-    // Sistema que detecta si está en el suelo.
 
-    private void Awake()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Obtiene físicas.
-
         input = GetComponent<PlayerInputHandler>();
-        // Obtiene input.
-
         ground = GetComponent<PlayerGroundCheck>();
-        // Obtiene detección de suelo.
     }
 
-    private void Update()
-    // Se ejecuta cada frame.
+    void Update()
     {
         if (input.JumpPressed && ground.IsGrounded)
-        // Si el jugador ha pulsado salto Y está en el suelo...
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            // Aplica fuerza vertical de salto.
+            Jump();
         }
+    }
+
+    void Jump()
+    {
+        // 1. NO destruimos velocidad vertical completamente (IMPORTANTE FIX)
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+
+        // 2. Aplicamos impulso de salto
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }

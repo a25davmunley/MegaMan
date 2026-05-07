@@ -6,28 +6,43 @@ public class RazyBody : MonoBehaviour
     public float lifeTime = 3f;
 
     private Rigidbody2D rb;
-    private int direction = 1;
+    private int direction;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        if (rb == null)
-        {
-            Debug.LogError("❌ RazyBody necesita Rigidbody2D");
-            return;
-        }
-
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
+
+        CrazyRazy parent = FindObjectOfType<CrazyRazy>();
+
+        if (parent != null)
+        {
+            direction = -1;
+        }
 
         Destroy(gameObject, lifeTime);
     }
 
     void FixedUpdate()
     {
-        if (rb == null) return;
-
         rb.velocity = new Vector2(direction * speed, 0f);
+
+        CheckTouch();
+    }
+
+    void CheckTouch()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player == null) return;
+
+        float dist = Vector2.Distance(transform.position, player.transform.position);
+
+        if (dist <= 1f)
+        {
+            Debug.Log("se toca si");
+        }
     }
 }
