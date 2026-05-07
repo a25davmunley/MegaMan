@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4561575072918616654}
   - component: {fileID: 6573404041707470764}
-  - component: {fileID: 2742100779726311675}
   - component: {fileID: 5563191856374626269}
   - component: {fileID: 7024093892627536580}
+  - component: {fileID: 2742100779726311675}
   m_Layer: 10
   m_Name: Crazy Razy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,24 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2742100779726311675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4198920273210114647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84bbeacc2403dc64a8f1977d2906576f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 5634689703185229193, guid: 15a1c40f8041fdd49aee8fbf4bac8f4e, type: 3}
-  triggerDistance: 3
-  timeToSplit: 2
-  speed: 2
-  headPrefab: {fileID: 2163557511751594500, guid: 0703cdb18aae00b41885ced1f503f509, type: 3}
-  bodyPrefab: {fileID: 5348610249359053033, guid: a2cb3539837c4a54ca92d58c34d72724, type: 3}
 --- !u!50 &5563191856374626269
 Rigidbody2D:
   serializedVersion: 4
@@ -113,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4198920273210114647}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -177,3 +159,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2742100779726311675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198920273210114647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84bbeacc2403dc64a8f1977d2906576f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRange: 5
+  speed: 3
+  headPrefab: {fileID: 2163557511751594500, guid: 0703cdb18aae00b41885ced1f503f509, type: 3}
+  bodyPrefab: {fileID: 5348610249359053033, guid: a2cb3539837c4a54ca92d58c34d72724, type: 3}

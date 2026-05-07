@@ -31,7 +31,7 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetFloat("Horizontal", Mathf.Abs(input.MoveInput.x));
         // Envía al Animator la velocidad horizontal (valor absoluto).
 
-        animator.SetFloat("VerticalSpeed", rb.velocity.y);
+       // animator.SetFloat("EnSuelo", rb.velocity.y);
         // Envía la velocidad vertical (salto o caída).
     }
 }
