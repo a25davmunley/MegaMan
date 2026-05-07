@@ -1,37 +1,66 @@
-using UnityEngine;
-// Librería base de Unity.
+ï»¿using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
-// Controla animaciones del jugador.
 {
     private Animator animator;
-    // Sistema de animaciones.
-
     private PlayerInputHandler input;
-    // Input del jugador.
-
     private Rigidbody2D rb;
-    // Física del jugador.
+    private SpriteRenderer sprite;
+
+    [Header("Suelo")]
+    public Transform groundCheck;
+    public float groundDistance = 0.2f;
+    public LayerMask groundLayer;
+
+    private bool isGrounded;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        // Obtiene Animator.
-
         input = GetComponent<PlayerInputHandler>();
-        // Obtiene input.
-
         rb = GetComponent<Rigidbody2D>();
-        // Obtiene físicas.
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
-    // Se ejecuta cada frame.
     {
-        animator.SetFloat("Horizontal", Mathf.Abs(input.MoveInput.x));
-        // Envía al Animator la velocidad horizontal (valor absoluto).
+        if (groundCheck == null) return;
 
-       // animator.SetFloat("EnSuelo", rb.velocity.y);
-        // Envía la velocidad vertical (salto o caída).
+        // Suelo
+        isGrounded = Physics2D.OverlapCircle(
+            groundCheck.position,
+            groundDistance,
+            groundLayer
+        );
+
+        animator.SetBool("EnSuelo", isGrounded);
+
+        // Salto
+        if (input != null && input.JumpPressed && isGrounded)
+        {
+            animator.SetTrigger("Jump");
+        }
+
+        // ðŸ”¥ GIRO CORRECTO (SIN CAMBIAR ESCALA)
+        Flip();
+    }
+
+    private void LateUpdate()
+    {
+        animator.SetFloat("Horizontal", Mathf.Abs(rb.velocity.x));
+    }
+
+    private void Flip()
+    {
+        float moveX = input.MoveInput.x;
+
+        if (moveX > 0.1f)
+        {
+            sprite.flipX = false;
+        }
+        else if (moveX < -0.1f)
+        {
+            sprite.flipX = true;
+        }
     }
 }
