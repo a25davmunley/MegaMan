@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7821770959909690399}
   - component: {fileID: 7028310893665050964}
   - component: {fileID: 4030903776986074121}
+  - component: {fileID: 3789773686157447426}
   m_Layer: 0
   m_Name: Gabyoall
   m_TagString: Enemy
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1040671951, guid: 3ab82bae521079745a82e2f49a56e261, type: 3}
+  m_Sprite: {fileID: -1433410926, guid: a609bbb481733204690507eb26fb721c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,21 +117,21 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004302025, y: -0.002868086}
+  m_Offset: {x: 0.0005207062, y: 0.00054228306}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.16, y: 0.08}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0010473, y: 1.0096512}
+  m_Size: {x: 0.18844223, y: 0.114774704}
   m_EdgeRadius: 0
 --- !u!50 &7028310893665050964
 Rigidbody2D:
@@ -174,7 +175,28 @@ MonoBehaviour:
   detectRange: 5
   speed: 2
   chaseSpeed: 4
-  wallCheckDistance: 0.05
+  wallCheckDistance: 0.6
   groundLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
+--- !u!95 &3789773686157447426
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483588441871396036}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0050bfae7e4f6c489814c0b8a9ce68f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
