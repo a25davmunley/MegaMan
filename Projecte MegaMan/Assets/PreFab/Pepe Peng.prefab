@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3144462723362199130}
   - component: {fileID: 2521440303786242378}
   - component: {fileID: 1464834295898200697}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pepe Peng
   m_TagString: Enemy
   m_Icon: {fileID: 0}
