@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 public class Gabyoall : EnemyAI
-// Enemigo que patrulla y persigue.
 {
     public float speed = 2f;
     public float chaseSpeed = 4f;
@@ -17,7 +16,6 @@ public class Gabyoall : EnemyAI
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Física del enemigo.
     }
 
     void FixedUpdate()
@@ -25,27 +23,35 @@ public class Gabyoall : EnemyAI
         if (!player) return;
 
         float currentSpeed = chasing ? chaseSpeed : speed;
-        // Si persigue → más rápido.
 
         CheckWall();
-        // Detecta paredes.
 
         rb.velocity = new Vector2(direction * currentSpeed, rb.velocity.y);
-        // Movimiento lateral.
     }
 
     void CheckWall()
     {
-        Vector2 origin = (Vector2)transform.position + Vector2.up * 0.2f;
+        Vector2 origin = (Vector2)transform.position + Vector2.right * direction * 0.5f;
         Vector2 dir = Vector2.right * direction;
 
-        hit = Physics2D.Raycast(origin, dir, wallCheckDistance, groundLayer);
-        // Raycast para detectar pared.
+        Debug.DrawRay(origin, dir * wallCheckDistance, Color.red);
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, wallCheckDistance, groundLayer);
 
         if (hit.collider != null)
         {
-            direction *= -1;
-            // Cambia dirección al chocar.
+            Flip();
         }
+    }
+
+    void Flip()
+    {
+        direction *= -1;
+
+        Vector3 scale = transform.localScale;
+        scale.x = Mathf.Abs(scale.x) * direction;
+        transform.localScale = scale;
+
+        transform.position += Vector3.right * direction * 0.1f;
     }
 }
