@@ -6,12 +6,11 @@ public class Gabyoall : EnemyAI
     public float chaseSpeed = 4f;
 
     public float wallCheckDistance = 0.6f;
+    public float groundCheckDistance = 1f;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private int direction = 1;
-
-    private RaycastHit2D hit;
 
     void Start()
     {
@@ -25,6 +24,7 @@ public class Gabyoall : EnemyAI
         float currentSpeed = chasing ? chaseSpeed : speed;
 
         CheckWall();
+        CheckGroundAhead();
 
         rb.velocity = new Vector2(direction * currentSpeed, rb.velocity.y);
     }
@@ -39,6 +39,22 @@ public class Gabyoall : EnemyAI
         RaycastHit2D hit = Physics2D.Raycast(origin, dir, wallCheckDistance, groundLayer);
 
         if (hit.collider != null)
+        {
+            Flip();
+        }
+    }
+
+    void CheckGroundAhead()
+    {
+        Vector2 origin = (Vector2)transform.position + Vector2.right * direction * 0.5f;
+        Vector2 down = Vector2.down;
+
+        Debug.DrawRay(origin, down * groundCheckDistance, Color.green);
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, down, groundCheckDistance, groundLayer);
+
+        // ❌ si NO hay suelo → girar
+        if (hit.collider == null)
         {
             Flip();
         }

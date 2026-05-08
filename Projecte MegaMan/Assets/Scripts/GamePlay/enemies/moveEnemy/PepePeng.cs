@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class PepePeng : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class PepePeng : MonoBehaviour
     public int direction = -1;
 
     private Vector3 startPos;
+    private float offset;
 
     void Start()
     {
-        startPos = transform.position;
+        Vector3 pos = transform.position;
+        pos.z = 10f;
+        transform.position = pos;
     }
 
     void Update()
@@ -20,8 +24,8 @@ public class PepePeng : MonoBehaviour
         // movimiento horizontal
         transform.position += Vector3.right * direction * speed * Time.deltaTime;
 
-        // movimiento vertical en onda (FLY)
-        float y = Mathf.Sin(Time.time * frequency) * amplitude;
+        // vuelo sinusoidal independiente
+        float y = Mathf.Sin((Time.time + offset) * frequency) * amplitude;
 
         transform.position = new Vector3(
             transform.position.x,
@@ -29,10 +33,10 @@ public class PepePeng : MonoBehaviour
             transform.position.z
         );
 
-        // destruir fuera de c�mara
+        // destruir fuera de cámara
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
 
-        if (viewPos.x < -0.2f || viewPos.x > 1.2f)
+        if (viewPos.x < -0.3f || viewPos.x > 1.3f)
         {
             Destroy(gameObject);
         }
