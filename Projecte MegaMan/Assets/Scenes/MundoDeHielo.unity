@@ -676,8 +676,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-=======
->>>>>>> bca0503001fe8cf88959bfc621d9e54e1c7dc2b0
 --- !u!1001 &231793745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1043,8 +1041,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> bca0503001fe8cf88959bfc621d9e54e1c7dc2b0
 --- !u!1001 &434219546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46566,8 +46562,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> bca0503001fe8cf88959bfc621d9e54e1c7dc2b0
 --- !u!1001 &1607394611
 PrefabInstance:
   m_ObjectHideFlags: 0
