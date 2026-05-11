@@ -1,75 +1,75 @@
-using UnityEngine;
+using UnityEngine; // Importa la librería principal de Unity
 
-public class IcemanAI : MonoBehaviour
+public class IcemanAI : MonoBehaviour // IA del enemigo tipo Iceman
 {
-    [Header("Movimiento")]
-    public float speed = 2f;
-    public Transform leftPoint;
-    public Transform rightPoint;
+    [Header("Movimiento")] // Sección visual en el Inspector
+    public float speed = 2f; // Velocidad de patrulla
+    public Transform leftPoint; // Punto límite izquierdo
+    public Transform rightPoint; // Punto límite derecho
 
-    [Header("Disparo")]
-    public GameObject iceProjectile;
-    public Transform shootPoint;
-    public float shootCooldown = 2f;
+    [Header("Disparo")] // Sección de disparo en el Inspector
+    public GameObject iceProjectile; // Prefab del proyectil de hielo
+    public Transform shootPoint; // Punto desde donde dispara
+    public float shootCooldown = 2f; // Tiempo entre disparos
 
-    private Rigidbody2D rb;
-    private bool movingRight = true;
-    private float shootTimer;
+    private Rigidbody2D rb; // Referencia al Rigidbody2D
+    private bool movingRight = true; // Dirección actual de movimiento
+    private float shootTimer; // Temporizador de disparo
 
-    void Awake()
+    void Awake() // Se ejecuta al instanciar el objeto
     {
-        rb = GetComponent<Rigidbody2D>();
-        shootTimer = shootCooldown;
+        rb = GetComponent<Rigidbody2D>(); // Obtiene el Rigidbody2D
+        shootTimer = shootCooldown; // Inicializa el temporizador
     }
 
-    void Update()
+    void Update() // Se ejecuta cada frame
     {
-        Patrol();
-        ShootLogic();
+        Patrol(); // Controla el movimiento de patrulla
+        ShootLogic(); // Controla la lógica de disparo
     }
 
-    void Patrol()
+    void Patrol() // Movimiento entre dos puntos
     {
-        if (movingRight)
+        if (movingRight) // Si se mueve a la derecha
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            rb.velocity = new Vector2(speed, rb.velocity.y); // Se mueve a la derecha
 
-            if (transform.position.x >= rightPoint.position.x)
-                Flip();
+            if (transform.position.x >= rightPoint.position.x) // Si llega al límite derecho
+                Flip(); // Cambia dirección
         }
-        else
+        else // Si se mueve a la izquierda
         {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            rb.velocity = new Vector2(-speed, rb.velocity.y); // Se mueve a la izquierda
 
-            if (transform.position.x <= leftPoint.position.x)
-                Flip();
-        }
-    }
-
-    void ShootLogic()
-    {
-        shootTimer -= Time.deltaTime;
-
-        if (shootTimer <= 0f)
-        {
-            Shoot();
-            shootTimer = shootCooldown;
+            if (transform.position.x <= leftPoint.position.x) // Si llega al límite izquierdo
+                Flip(); // Cambia dirección
         }
     }
 
-    void Shoot()
+    void ShootLogic() // Controla el temporizador de disparo
     {
-        if (iceProjectile == null || shootPoint == null) return;
+        shootTimer -= Time.deltaTime; // Reduce el tiempo
 
-        Instantiate(iceProjectile, shootPoint.position, Quaternion.identity);
+        if (shootTimer <= 0f) // Si puede disparar
+        {
+            Shoot(); // Dispara
+            shootTimer = shootCooldown; // Reinicia temporizador
+        }
     }
 
-    void Flip()
+    void Shoot() // Método de disparo
     {
-        movingRight = !movingRight;
+        if (iceProjectile == null || shootPoint == null) return; // Validación
 
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        Instantiate(iceProjectile, shootPoint.position, Quaternion.identity); // Crea el proyectil
+    }
+
+    void Flip() // Cambia la dirección del enemigo
+    {
+        movingRight = !movingRight; // Invierte dirección
+
+        Vector3 scale = transform.localScale; // Obtiene escala actual
+        scale.x *= -1; // Invierte horizontalmente el sprite
+        transform.localScale = scale; // Aplica la nueva escala
     }
 }

@@ -1,63 +1,57 @@
-﻿using UnityEngine;
+﻿using UnityEngine; // Importa la librería principal de Unity
 
-public class CrazyRazy : MonoBehaviour
+public class CrazyRazy : MonoBehaviour // Define una clase que hereda de MonoBehaviour (comportamiento de Unity)
 {
-    public Transform player;
+    public Transform player; // Referencia al jugador
 
-    public float detectRange = 6f;
-    public float splitRange = 1.2f;
+    public float detectRange = 6f; // Distancia a la que el enemigo empieza a perseguir
+    public float splitRange = 1.2f; // Distancia a la que se divide
 
-    public float speed = 3f;
+    public float speed = 3f; // Velocidad de movimiento
 
-    public GameObject headPrefab;
-    public GameObject bodyPrefab;
+    public GameObject headPrefab; // Prefab de la cabeza al dividirse
+    public GameObject bodyPrefab; // Prefab del cuerpo al dividirse
 
-    private Rigidbody2D rb;
+    private Rigidbody2D rb; // Referencia al Rigidbody2D del objeto
 
-    private bool activated;
-    private bool chasing;
+    private bool activated; // Evita que el enemigo actúe después de dividirse
+    private bool chasing; // Indica si está persiguiendo al jugador
 
-    void Start()
+    void Start() // Se ejecuta al iniciar el objeto
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
-
-        rb.freezeRotation = true;
+        rb = GetComponent<Rigidbody2D>(); // Obtiene el Rigidbody2D del propio objeto
+        player = GameObject.FindGameObjectWithTag("Player")?.transform; // Busca al jugador por tag
+        rb.freezeRotation = true; // Evita que el objeto rote físicamente
     }
 
-    void Update()
+    void Update() // Se ejecuta cada frame
     {
-        if (!player || activated) return;
+        if (!player || activated) return; // Si no hay jugador o ya se activó, no hace nada
 
-        float dist = Vector2.Distance(transform.position, player.position);
+        float dist = Vector2.Distance(transform.position, player.position); // Calcula la distancia al jugador
+        chasing = dist <= detectRange; // Activa persecución si está dentro del rango
 
-        chasing = dist <= detectRange;
-
-        if (dist <= splitRange)
+        if (dist <= splitRange) // Si está lo suficientemente cerca
         {
-            Debug.Log("se toca");
-
-            Split();
+            Split(); // Se divide
         }
     }
 
-    void FixedUpdate()
+    void FixedUpdate() // Se ejecuta en intervalos fijos (física)
     {
-        if (!chasing || activated) return;
+        if (!chasing || activated) return; // Si no persigue o está activado, no hace nada
 
-        Vector2 dir = (player.position - transform.position).normalized;
-
-        rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
+        Vector2 dir = (player.position - transform.position).normalized; // Dirección hacia el jugador
+        rb.velocity = new Vector2(dir.x * speed, rb.velocity.y); // Mueve al enemigo en X manteniendo Y
     }
 
-    void Split()
+    void Split() // Función que maneja la división del enemigo
     {
-        activated = true;
+        activated = true; // Marca como activado para evitar más acciones
 
-        Instantiate(headPrefab, transform.position, Quaternion.identity);
-        Instantiate(bodyPrefab, transform.position, Quaternion.identity);
+        Instantiate(headPrefab, transform.position, Quaternion.identity); // Crea la cabeza
+        Instantiate(bodyPrefab, transform.position, Quaternion.identity); // Crea el cuerpo
 
-        Destroy(gameObject);
+        Destroy(gameObject); // Elimina el objeto original
     }
 }

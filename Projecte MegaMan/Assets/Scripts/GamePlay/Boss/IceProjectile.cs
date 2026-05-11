@@ -1,38 +1,38 @@
-using UnityEngine;
+using UnityEngine; // Importa la librería principal de Unity
 
-public class IceProjectile : MonoBehaviour
+public class IceProjectile : MonoBehaviour // Clase que controla el proyectil de hielo
 {
-    public float speed = 6f;
-    public float lifeTime = 3f;
+    public float speed = 6f; // Velocidad del proyectil
+    public float lifeTime = 3f; // Tiempo de vida antes de destruirse
 
-    private Rigidbody2D rb;
+    private Rigidbody2D rb; // Referencia al Rigidbody2D
 
-    void Awake()
+    void Awake() // Se ejecuta al crear el objeto
     {
-        rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, lifeTime);
+        rb = GetComponent<Rigidbody2D>(); // Obtiene el Rigidbody2D del proyectil
+        Destroy(gameObject, lifeTime); // Destruye el proyectil tras un tiempo
     }
 
-    void Start()
+    void Start() // Se ejecuta al inicio del frame siguiente a Awake
     {
-        rb.velocity = transform.right * speed;
+        rb.velocity = transform.right * speed; // Mueve el proyectil hacia su dirección local derecha
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other) // Se ejecuta al tocar otro collider
     {
-        PlayerHealth player = other.GetComponent<PlayerHealth>();
+        PlayerHealth player = other.GetComponent<PlayerHealth>(); // Intenta obtener el script de vida del jugador
 
-        if (player != null)
+        if (player != null) // Si el objeto tocado es el jugador
         {
-            player.currentHealth -= 3;
+            player.currentHealth -= 3; // Resta vida al jugador
 
-            if (player.currentHealth <= 0)
+            if (player.currentHealth <= 0) // Si la vida llega a 0 o menos
             {
-                Debug.Log("Player muerto");
-                player.gameObject.SetActive(false);
+                Debug.Log("Player muerto"); // Mensaje en consola
+                player.gameObject.SetActive(false); // Desactiva al jugador
             }
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject); // Destruye el proyectil al impactar
     }
 }
