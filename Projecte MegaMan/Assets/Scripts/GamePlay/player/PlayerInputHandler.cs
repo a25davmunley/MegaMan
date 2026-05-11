@@ -1,77 +1,63 @@
-using UnityEngine;
-// Importa funcionalidades básicas de Unity.
-
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem;
-// Importa el nuevo sistema de input de Unity.
 
 public class PlayerInputHandler : MonoBehaviour, PlayerInputAction.IPlayerActions
-// Este script SOLO se encarga de leer inputs del jugador.
-// Implementa la interfaz generada por el Input System.
 {
     private PlayerInputAction inputActions;
-    // Contiene todas las acciones configuradas en el Input System.
 
     public Vector2 MoveInput { get; private set; }
-    // Guarda el movimiento del jugador (horizontal y vertical).
-
     public bool JumpPressed { get; private set; }
-    // Indica si el jugador ha presionado salto en este frame.
 
-    private void Awake()
-    // Se ejecuta al cargar el objeto, antes de Start.
+    private float jumpBufferTime = 0.1f;
+    private float jumpTimer;
+
+    void Awake()
     {
         inputActions = new PlayerInputAction();
-        // Se crea la instancia del sistema de input.
-
         inputActions.Player.SetCallbacks(this);
-        // Este script se registra como receptor de eventos de input.
+        inputActions.Player.Enable();
     }
 
-    private void OnEnable()
-    // Cuando el objeto se activa.
+    void Update()
     {
-        inputActions.Enable();
-        // Activa el sistema de input.
+        if (JumpPressed)
+        {
+            jumpTimer = jumpBufferTime;
+        }
+
+        if (jumpTimer > 0)
+            jumpTimer -= Time.deltaTime;
     }
 
-    private void OnDisable()
-    // Cuando el objeto se desactiva.
+    public bool ConsumeJump()
     {
-        inputActions.Disable();
-        // Desactiva el input para evitar errores o inputs fantasma.
+        if (jumpTimer > 0)
+        {
+            jumpTimer = 0;
+            return true;
+        }
+        return false;
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         MoveInput = context.ReadValue<Vector2>();
-
-        
     }
 
     public void OnJump(InputAction.CallbackContext context)
-    // Se ejecuta cuando se presiona salto.
     {
-        if (context.started)
-        // Detecta SOLO el momento inicial del botón.
+        if (context.performed)
         {
             JumpPressed = true;
-            // Activa salto durante este frame.
         }
     }
 
-    private void LateUpdate()
-    // Se ejecuta al final de cada frame.
+    void LateUpdate()
     {
         JumpPressed = false;
-        // Resetea el salto para que no se repita automáticamente.
     }
 
     public void OnPausa(InputAction.CallbackContext context) { }
-    // Input reservado (pausa del juego).
-
     public void OnPaneldepoderes(InputAction.CallbackContext context) { }
-    // Input reservado (UI futura).
-
     public void OnPoderes(InputAction.CallbackContext context) { }
-    // Input reservado (habilidades futuras).
 }

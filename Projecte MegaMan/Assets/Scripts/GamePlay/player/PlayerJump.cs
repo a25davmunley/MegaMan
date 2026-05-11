@@ -19,16 +19,10 @@ public class PlayerJump : MonoBehaviour
     {
         if (input.JumpPressed && ground.IsGrounded)
         {
-            Jump();
+            
+
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-    }
-
-    void Jump()
-    {
-        // 1. NO destruimos velocidad vertical completamente (IMPORTANTE FIX)
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-
-        // 2. Aplicamos impulso de salto
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }
