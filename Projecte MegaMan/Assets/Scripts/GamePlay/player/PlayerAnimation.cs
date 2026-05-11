@@ -3,64 +3,52 @@
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator animator;
-    private PlayerInputHandler input;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private PlayerInputHandler input;
+    private PlayerGroundCheck ground;
 
-    [Header("Suelo")]
-    public Transform groundCheck;
-    public float groundDistance = 0.2f;
-    public LayerMask groundLayer;
+    private bool wasGrounded;
 
-    private bool isGrounded;
-
-    private void Awake()
+    void Awake()
     {
         animator = GetComponent<Animator>();
-        input = GetComponent<PlayerInputHandler>();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        input = GetComponent<PlayerInputHandler>();
+        ground = GetComponent<PlayerGroundCheck>();
+
+        wasGrounded = ground.IsGrounded;
     }
 
-    private void Update()
+    void Update()
     {
-        if (groundCheck == null) return;
+        bool isGrounded = ground.IsGrounded;
 
-        // Suelo
-        isGrounded = Physics2D.OverlapCircle(
-            groundCheck.position,
-            groundDistance,
-            groundLayer
-        );
-
+        // ✔ TU PARÁMETRO (NO CAMBIADO)
         animator.SetBool("EnSuelo", isGrounded);
 
-        // Salto
-        if (input != null && input.JumpPressed && isGrounded)
+        // ✔ TU PARÁMETRO (NO CAMBIADO)
+        animator.SetFloat("Horizontal", Mathf.Abs(rb.velocity.x));
+
+        // 🚀 SOLO DISPARA JUMP UNA VEZ (FIX REAL)
+        if (isGrounded == false && wasGrounded == true)
         {
             animator.SetTrigger("Jump");
         }
 
-        // 🔥 GIRO CORRECTO (SIN CAMBIAR ESCALA)
+        wasGrounded = isGrounded;
+
         Flip();
     }
 
-    private void LateUpdate()
-    {
-        animator.SetFloat("Horizontal", Mathf.Abs(rb.velocity.x));
-    }
-
-    private void Flip()
+    void Flip()
     {
         float moveX = input.MoveInput.x;
 
         if (moveX > 0.1f)
-        {
             sprite.flipX = false;
-        }
         else if (moveX < -0.1f)
-        {
             sprite.flipX = true;
-        }
     }
 }
