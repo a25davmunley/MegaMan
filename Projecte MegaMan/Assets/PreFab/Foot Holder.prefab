@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4787631787135924256}
   - component: {fileID: 2354571910578263089}
   - component: {fileID: 8591749481839484298}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Foot Holder
   m_TagString: Enemy
   m_Icon: {fileID: 0}
