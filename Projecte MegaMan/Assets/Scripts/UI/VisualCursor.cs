@@ -1,47 +1,39 @@
 ﻿using UnityEngine;
-// Importa funcionalidades básicas de Unity (Vector2, MonoBehaviour, etc.)
+// Importa funcionalidades básicas de Unity (Vector2, MonoBehaviour, Input, etc.)
 
 public class VisualCursor : MonoBehaviour
-// Script que controla un cursor visual personalizado en pantalla.
+// Script que controla un cursor visual personalizado en la UI
 {
     public RectTransform cursor;
-    // Referencia al objeto UI que actúa como cursor.
-    // RectTransform se usa en interfaces (UI), no en mundo 3D.
+    // Referencia al objeto UI que actúa como cursor visual
 
     public float speed = 20f;
-    // Velocidad con la que el cursor sigue al ratón.
-    // Más alto = más rápido, más bajo = más suave.
+    // Velocidad de seguimiento del cursor (más alto = más rápido, más bajo = más suave)
 
     private void Start()
-    // Se ejecuta al iniciar la escena.
+    // Se ejecuta una vez al iniciar la escena
     {
         Cursor.visible = false;
-        // Oculta el cursor real del sistema operativo.
+        // Oculta el cursor real del sistema operativo
 
         Cursor.lockState = CursorLockMode.Confined;
-        // Bloquea el cursor dentro de la ventana del juego.
-        // Evita que se salga de la pantalla.
+        // Mantiene el cursor dentro de la ventana del juego
     }
 
     private void Update()
-    // Se ejecuta cada frame.
+    // Se ejecuta cada frame
     {
         MoveCursor();
-        // Separa la lógica en un método para mantener el código limpio.
+        // Llama al método que mueve el cursor visual
     }
 
     private void MoveCursor()
-    // Controla el movimiento suave del cursor visual.
+    // Controla el movimiento suave del cursor visual
     {
         cursor.position = Vector2.Lerp(
-            cursor.position,
-            Input.mousePosition,
-            Time.deltaTime * speed
+            cursor.position,        // posición actual del cursor UI
+            Input.mousePosition,    // posición real del ratón
+            Time.deltaTime * speed  // suavidad del movimiento
         );
-        // Lerp = interpolación suave entre dos puntos.
-
-        // cursor.position → posición actual del cursor visual
-        // Input.mousePosition → posición real del ratón
-        // Time.deltaTime * speed → suavidad dependiente del tiempo
     }
 }

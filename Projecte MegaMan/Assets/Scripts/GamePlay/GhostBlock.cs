@@ -1,50 +1,48 @@
-﻿using UnityEngine;
+﻿using UnityEngine; // Importa la librería principal de Unity
 
-public class GhostBlock : MonoBehaviour
+public class GhostBlock : MonoBehaviour // Bloque que aparece y desaparece periódicamente
 {
-    public float activeTime = 2f;
-    public float inactiveTime = 2f;
-    public float startDelay = 0f;
+    public float activeTime = 2f; // Tiempo que el bloque está activo (visible y sólido)
+    public float inactiveTime = 2f; // Tiempo que el bloque está inactivo
+    public float startDelay = 0f; // Retardo inicial antes de empezar el ciclo
 
-    private SpriteRenderer sr;
-    private Collider2D col;
+    private SpriteRenderer sr; // Controla la visibilidad del bloque
+    private Collider2D col; // Controla la colisión del bloque
 
-    private bool active;
-    private float timer;
+    private bool active; // Estado actual (activo o no)
+    private float timer; // Temporizador general
 
-    void Start()
+    void Start() // Se ejecuta al iniciar el objeto
     {
-        sr = GetComponent<SpriteRenderer>();
-        col = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>(); // Obtiene el SpriteRenderer
+        col = GetComponent<Collider2D>(); // Obtiene el Collider2D
 
-        // 🔴 empieza apagado
-        SetState(false);
+        SetState(false); // Empieza apagado (invisible e intangible)
     }
 
-    void Update()
+    void Update() // Se ejecuta cada frame
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime; // Suma el tiempo transcurrido
 
-        // 🔵 espera inicial
-        if (timer < startDelay) return;
+        if (timer < startDelay) return; // Espera inicial antes de activar el ciclo
 
-        if (active && timer >= startDelay + activeTime)
+        if (active && timer >= startDelay + activeTime) // Si está activo y se cumple el tiempo
         {
-            SetState(false);
-            timer = startDelay;
+            SetState(false); // Se desactiva
+            timer = startDelay; // Reinicia el ciclo
         }
-        else if (!active && timer >= startDelay + inactiveTime)
+        else if (!active && timer >= startDelay + inactiveTime) // Si está inactivo y se cumple el tiempo
         {
-            SetState(true);
-            timer = startDelay;
+            SetState(true); // Se activa
+            timer = startDelay; // Reinicia el ciclo
         }
     }
 
-    public void SetState(bool state)
+    public void SetState(bool state) // Cambia el estado del bloque
     {
-        active = state;
+        active = state; // Guarda estado
 
-        sr.enabled = state;
-        col.enabled = state;
+        sr.enabled = state; // Activa/desactiva visibilidad
+        col.enabled = state; // Activa/desactiva colisión
     }
 }
