@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 // Permite cambiar entre escenas del juego.
 
 public class MenuButtons : MonoBehaviour
-// Script que controla los botones del menú principal.
+// Script que controla los botones del men?principal.
 {
     [Header("Scenes")]
     // Solo organización visual en el Inspector.
